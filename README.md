@@ -3,7 +3,7 @@ To Install Windows Sub-System for Linux on Windows10<br>
 Best suited for developers who need Linux shell on windows system<p>
 Step 1:  Enable WSL2: <br>
 https://docs.microsoft.com/en-us/windows/wsl/install-win10<br>
-GoTo  PowerShell & Ececute the following commands :<br>
+GoTo  PowerShell & Execute the following commands :<br>
   1. Install WSL on windows<br>
   command : <b>wsl --install</b><br>
   By default, the installed Linux distribution will be Ubuntu. This can be changed using the -d flag.<br>
@@ -17,7 +17,7 @@ GoTo  PowerShell & Ececute the following commands :<br>
   3. Configure Sudo access for non-root user<br>
   command : <b>grep -E 'sudo|wheel' /etc/group </b><br>
   (should get: sudo:27:myusername  Else run: <b>usermod -aG sudo myusername</b>)<br>
-  command : sudo grep -E '%sudo|%wheel' /etc/sudoers<br>
+  command : <b>sudo grep -E '%sudo|%wheel' /etc/sudoers  </b><br>
 (should get: %wheel ALL=(ALL) ALL else edit and uncomment)<br>
  command :  <b>su myusername</b><br>
  command : <b>sudo -v</b><br>
@@ -25,11 +25,11 @@ GoTo  PowerShell & Ececute the following commands :<br>
   
   4. Update/upgrade packages(test network) <br>
   <b>sudo apt update && sudo apt upgrade </b><br>
-(should get: no errors, else run below commands) <br>
+(should get: no errors, else run below 2 commands) <br>
   <b>echo -e "[network]\ngenerateResolvConf = false" | sudo tee -a /etc/wsl.conf </b><br>
   command : <b>sudo unlink /etc/resolv.conf  </b><br>
   command : <b>echo nameserver 1.1.1.1 | sudo tee /etc/resolv.conf  </b> <br>
-  (------try above command, if still errors, try below commands------) <br>
+  (------try above command, if still errors, try below 4 commands------) <br>
   command : <b>netsh winsock reset </b><br>
   command : <b>netsh int ip reset all </b> <br>
   command : <b>netsh winhttp reset proxy  </b><br>
