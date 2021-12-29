@@ -45,8 +45,8 @@ GoTo  PowerShell & Execute the following commands :<br>
   If this command works and returns network adapters that means linux is up. <br>
   command:  <b> wsl --shutdown </b><br>
   This will terminate the running linux shell and utilised memory will be released
-  
-  
+  </br>
+  <b><u> Please Follow Next Step from another Repo - "Brew Package Manager setup for WSL" </u></b>
   <p><p>
     I hope this guidelines have helped you.
     <br>
